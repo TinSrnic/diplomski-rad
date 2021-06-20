@@ -1,0 +1,255 @@
+#version 430
+#define M_PI 3.1415926538
+#define numAgents 100
+uniform float robotRadius;
+layout (local_size_x = 10) in;
+layout (binding = 1, rgba8) uniform image2D destTex;
+
+struct Agent {
+    vec2 position;
+    vec2 velocity;
+	vec2 goal;
+};
+
+layout (std430, binding=0) buffer test {
+	Agent agents[];
+};
+
+void colorAgent(vec2 position) {
+	float x1, y1;
+	float r = robotRadius * 50;
+	// calculates the minimun angle between two pixels in a diagonal.
+	// you can multiply minAngle by a security factor like 0.9 just to be sure you wont have empty pixels in the circle
+	float minAngle = acos(1 - 1/r);
+
+	for(float angle = 0; angle <= 360; angle += minAngle) {
+		x1 = r * cos(angle);
+		y1 = r * sin(angle);
+		
+		imageStore(destTex, ivec2(position + vec2(x1, y1)), vec4(1, 1, 1, 1));
+	}
+}
+
+float distance(vec2 pos1, vec2 pos2);
+bool in_between(float theta_right, float theta_dif, float theta_left);
+bool reach(vec2 p1, vec2 p2, float bound);
+
+void main() {
+    float rob_rad = robotRadius + 0.1;
+	uint id = gl_GlobalInvocationID.x;
+	float test = agents[id].position.x;
+	vec2 des;
+	vec2 dif_x = agents[id].position - agents[id].goal;
+	float norm = distance(dif_x, vec2(0, 0));
+	vec2 norm_dif_x = vec2(dif_x.x / norm, dif_x.y / norm);
+	if (reach(agents[id].position, agents[id].goal, 0.1)) {
+		des = vec2(0, 0);
+	} else {
+		des = norm_dif_x;
+	}
+	
+	vec2 vA = agents[id].velocity;
+	vec2 pA = agents[id].position;
+	vec2 rvo_ba_all[numAgents - 1][4];
+	int counter = 0;
+	for (int j = 0; j < numAgents; ++j) {
+		if (id != j) {
+			vec2 vB = agents[j].velocity;
+			vec2 pB = agents[j].position;
+			vec2 transl_vB_vA = vec2(pA.x + 0.5f * (vB.x + vA.x), pA.y + 0.5f * (vB.y + vA.y));
+			float dist_BA = distance(pA, pB);
+			float theta_BA = atan(pB.y - pA.y, pB.x - pA.x);
+			if (2 * rob_rad > dist_BA) {
+				dist_BA = 2 * rob_rad;
+			}
+			
+			float theta_BAort = asin(2 * rob_rad / dist_BA);
+			
+			float theta_ort_left = theta_BA + theta_BAort;
+			float theta_ort_right = theta_BA - theta_BAort;
+			
+			vec2 bound_left = vec2(cos(theta_ort_left), sin(theta_ort_left));
+			vec2 bound_right = vec2(cos(theta_ort_right), sin(theta_ort_right));
+			
+			rvo_ba_all[counter][0] = transl_vB_vA;
+			rvo_ba_all[counter][1] = bound_left;
+			rvo_ba_all[counter][2] = bound_right;
+			rvo_ba_all[counter][3] = vec2(dist_BA, 2 * rob_rad);
+			counter++;
+		}
+	}
+	
+	//START OF INTERSECT;
+	
+	float norm_v = distance(des, vec2(0, 0));
+    vec2 suitable_V[63 * 5];
+	vec2 unsuitable_V[63 * 5];
+	int suitableCounter = 0;
+	int unsuitableCounter = 0;
+    for (float theta = 0.0f; theta < 2 * M_PI; theta += 0.1f) {
+        for (float rad = 0.02f; rad < norm_v + 0.02f; rad += norm_v / 5.0f) {
+            vec2 new_v = vec2(rad * cos(theta), rad * sin(theta));
+            bool suit = true;
+            for(int i = 0; i < numAgents - 1; ++i) { 
+                float dif0 = new_v[0] + pA.x - rvo_ba_all[i][0].x;
+                float dif1 = new_v[1] + pA.y - rvo_ba_all[i][0].y;
+                
+                float theta_dif = atan(dif1, dif0);
+                float theta_right = atan(rvo_ba_all[i][2].y, rvo_ba_all[i][2].x);
+                float theta_left = atan(rvo_ba_all[i][1].y, rvo_ba_all[i][1].x);
+                if(in_between(theta_right, theta_dif, theta_left)) {
+                    suit = false;
+                    break;
+                }
+            }
+
+            if (suit) {
+				suitableCounter++;
+                suitable_V[suitableCounter] = new_v;
+            } else {
+				unsuitableCounter++;
+				unsuitable_V[unsuitableCounter] = new_v;
+            }
+        }
+    }
+
+    vec2 new_v = des;
+    bool suit = true;
+    for(int i = 0; i < numAgents - 1; ++i) {
+        float dif0 = new_v.x + pA.x - rvo_ba_all[i][0].x;
+        float dif1 = new_v.y + pA.y - rvo_ba_all[i][0].y;
+
+        float theta_dif = atan(dif1, dif0);
+        float theta_right = atan(rvo_ba_all[i][2].y, rvo_ba_all[i][2].x);
+        float theta_left = atan(rvo_ba_all[i][1].y, rvo_ba_all[i][1].x);
+        if(in_between(theta_right, theta_dif, theta_left)) {
+            suit = false;
+            break;
+        }
+    }
+
+    if (suit) {
+		suitableCounter++;
+		suitable_V[suitableCounter] = new_v;
+	} else {
+		unsuitableCounter++;
+		unsuitable_V[unsuitableCounter] = new_v;
+	}
+
+    vec2 vA_post = vec2(0, 0);
+    if (suitableCounter > 0) {
+        float minimum = 9999999.0f;
+        int minimumIndex = -1;
+        for (int i = 0; i < suitableCounter; ++i) {
+            float newDist = distance(des, suitable_V[i]);
+            if (newDist < minimum) {
+                minimum = newDist;
+                minimumIndex = i;
+            }
+        }
+        vA_post = suitable_V[minimumIndex];
+        new_v = vA_post;
+    } else {
+		float tc_V[63 * 5];
+		for(int uC = 0; uC < unsuitableCounter; ++uC) {
+            tc_V[uC] = 0;
+            float tc[numAgents - 1];
+            for(int i = 0; i < numAgents - 1; ++i) {
+                float dist = rvo_ba_all[i][3].x;
+                float rad = rvo_ba_all[i][3].y;
+                float dif0 = unsuitable_V[i].x + pA.x - rvo_ba_all[i][0].x;
+                float dif1 = unsuitable_V[i].y + pA.y - rvo_ba_all[i][0].y;
+
+                float theta_dif = atan(dif1, dif0);
+                float theta_right = atan(rvo_ba_all[i][2].y, rvo_ba_all[i][2].x);
+                float theta_left = atan(rvo_ba_all[i][1].y, rvo_ba_all[i][1].x);
+                if (in_between(theta_right, theta_dif, theta_left)) {
+                    float small_theta = abs(theta_dif - 0.5 * (theta_left + theta_right));
+                    if (abs(dist * sin(small_theta)) >= rad) {
+                        rad = abs(dist * sin(small_theta));
+                    }
+                    float big_theta = asin(abs(dist * sin(small_theta)) / rad);
+                    float dist_tg = abs(dist * cos(small_theta)) - abs(rad * cos(big_theta));
+                    if (dist_tg < 0) {
+                        dist_tg = 0;
+                    }
+                    tc[i] = dist_tg / distance(vec2(dif0, dif1), vec2(0, 0));
+                }
+            }
+
+            float minimum = 999999.0;
+            for (int i = 0; i < numAgents - 1; ++i) {
+                if (tc[i] < minimum) {
+                    minimum = tc[i];
+                }
+            }
+
+            tc_V[uC] = minimum + 0.001;
+        }
+        float WT = 0.2f;
+        float minimum = 999999.0f;
+        int minimumIndex = -1;
+        for (int i = 0; i < unsuitableCounter; ++i) {
+            float newMinimum = WT / tc_V[i] + distance(unsuitable_V[i], des);
+            if (newMinimum < minimum) {
+                minimum = newMinimum;
+                minimumIndex = i;
+            }
+        }
+        vA_post = unsuitable_V[minimumIndex];
+    }
+	
+	//END OF INTERSECT
+	
+	agents[id].velocity = vA_post;
+	float step = 0.1;
+	agents[id].position += vec2(vA_post.x * step, vA_post.y * step);
+	//colorAgent(agents[id].position);
+}
+
+bool in_between(float theta_right, float theta_dif, float theta_left) {
+    if (abs(theta_right - theta_left) <= M_PI) {
+        if (theta_right <= theta_dif && theta_dif <= theta_left) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    } else {
+        if ((theta_left < 0) && (theta_right > 0)) {
+            theta_left += 2 * M_PI;
+            if (theta_dif < 0) {
+                theta_dif += 2 * M_PI;
+            }
+            if (theta_right <= theta_dif && theta_dif <= theta_left) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        if ((theta_left > 0) && (theta_right < 0)) {
+            theta_right += 2 * M_PI;
+            if (theta_dif < 0) {
+                theta_dif += 2 * M_PI;
+            }
+            if (theta_right <= theta_dif && theta_dif <= theta_left) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+}
+
+bool reach(vec2 p1, vec2 p2, float bound) {
+    if(distance(p1, p2) < bound) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+float distance(vec2 pos1, vec2 pos2) {
+    return sqrt(pow(pos1.x - pos2.x, 2) + pow(pos1.y - pos2.y, 2)) + 0.001f;
+}

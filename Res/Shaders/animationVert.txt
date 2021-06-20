@@ -1,0 +1,96 @@
+#version 400 core
+
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec2 UV;
+layout (location = 2) in vec3 normal;
+layout (location = 3) in ivec3 joints;
+layout (location = 4) in vec3 weights;
+
+out vec2 textureCoordinates; //outputs the textureCoordinates to the fragment shader
+out vec3 surfaceNormal; //outputs the normal vector to the fragment shader
+out vec3 toLightVector[4]; //outputs the 4 vectors pointing to the light
+out vec3 toCameraVector; //outputs the vector pointing to the camera
+out float visibility; //outputs how visible the object is
+out vec4 shadowCoords;
+
+const int MAX_LIGHTS = 4;
+
+const int MAX_JOINTS = 50;
+const int MAX_WEIGHTS = 3;
+
+uniform mat4 jointMatrix[MAX_JOINTS];
+
+uniform mat4 projectionMatrix = mat4(1.0f);
+uniform mat4 viewMatrix = mat4(1.0f);
+uniform mat4 modelMatrix = mat4(1.0f);
+
+uniform vec3 lightPos[MAX_LIGHTS];
+uniform float useFakeLighting; //just outputs the normals pointing directly up(Vec3(0.0, 1.0, 0.0))
+
+uniform float numberOfRows; //the number of rows of the texture atlas
+uniform vec2 atlasOffset; //the offset to the texture
+
+uniform vec4 clipPlane;
+
+uniform float density = 0.0035; //density of the fog
+uniform float gradient = 5.0; //how the fog shifts from complete fog to no fog
+
+uniform mat4 toShadowSpace; //shadowProjectionMatrix * lightViewMatrix
+uniform float shadowDistance = 150.0; //max distance in which shadows are drawn
+uniform float shadowTransition = 10.0; //to smooth out the shadows when going from the shadow box to outside
+
+void main(void){
+	
+	vec4 totalPosition = vec4(0.0);
+	vec4 totalNormal = vec4(0.0);
+	for(int i = 0; i < MAX_WEIGHTS; i++) {
+		if(joints[i] == -1) break;
+		vec4 localPosition = jointMatrix[joints[i]] * vec4(position, 1.0);
+		totalPosition += localPosition * weights[i];
+		
+		vec4 localNormal = jointMatrix[joints[i]] * vec4(normal, 0.0);
+		totalNormal += localNormal * weights[i];
+	}
+	
+	//calculate position of vertex
+	vec4 worldPos = modelMatrix * totalPosition;
+	shadowCoords = 0.5 + 0.5 * toShadowSpace * worldPos;
+	
+	vec4 positionRelativeToCamera = viewMatrix * worldPos;
+	
+ 	gl_Position = projectionMatrix * positionRelativeToCamera;
+	
+	//calculate clip distance, not going to do anything if it is not enabled
+	gl_ClipDistance[0] = worldPos.x * clipPlane.x + worldPos.y * clipPlane.y + worldPos.z * clipPlane.z + clipPlane.w;
+	
+	//get texture coordinates from atlas
+	textureCoordinates = UV / numberOfRows + atlasOffset;
+	
+	//get normals
+	if(useFakeLighting > 0.5) {
+		surfaceNormal = vec3(0.0, 1.0, 0.0);
+	} else {
+		//the w component in the vec4 represents if the vector is a position or direction
+		//1 = position, 0 = direction
+		surfaceNormal = (modelMatrix * totalNormal).xyz;
+	}
+	
+	//calculate light vectors
+	for(int i = 0; i < MAX_LIGHTS; i++) {
+		toLightVector[i] = lightPos[i] - worldPos.xyz;
+	}
+	
+	//calculate to cameraVector
+	toCameraVector = (inverse(viewMatrix) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - worldPos.xyz;
+	
+	//used to blend distant entities with background
+	float distanceFromCamera = length(positionRelativeToCamera.xyz);
+	//e^((-distanceFromCamera * density) ^ gradient)
+	visibility = exp(-pow((distanceFromCamera * density), gradient));
+	visibility = clamp(visibility, 0.0, 1.0);
+	
+	distanceFromCamera = distanceFromCamera - (shadowDistance - shadowTransition);
+	distanceFromCamera = distanceFromCamera / shadowTransition;
+	distanceFromCamera = clamp(distanceFromCamera, 0.0, 1.0);
+	shadowCoords.w = 1.0 - distanceFromCamera;
+}

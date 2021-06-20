@@ -1,0 +1,4216 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "The enum type 'Camera::CameraType' is unscoped. Prefer 'enum class' over 'enum' (Enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/Camera.h"
+                },
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 2,
+                  "endLine": 29,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0Camera@@QAE@ABUVec3@@0MMABW4CameraType@0@0PAVEntity@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "'file' could be '0':  this does not adhere to the specification for the function 'fgetc'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                },
+                "region": {
+                  "startLine": 11,
+                  "startColumn": 3,
+                  "endLine": 11,
+                  "endColumn": 13
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?ReadFile@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 5,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 6,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'file' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 7,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 8,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 11,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "'file' is an Input to 'fgetc' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.18362.0\\ucrt\\stdio.h:177)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 11,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "'file' should not be NULL, because this is not consistent with the SAL annotation on 'fgetc'"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "'file' could be '0':  this does not adhere to the specification for the function 'fclose'. See line 11 for an earlier location where this can occur"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                },
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 2,
+                  "endLine": 16,
+                  "endColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?ReadFile@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 5,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 6,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'file' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 7,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 8,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 11,
+                            "startColumn": 5
+                          }
+                        },
+                        "message": {
+                          "text": "'file' is an Input to 'fgetc' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.18362.0\\ucrt\\stdio.h:177)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 12,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this branch, (assume 'c==((-1))')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 8,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 12,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 16,
+                            "startColumn": 8
+                          }
+                        },
+                        "message": {
+                          "text": "'file' is an Input to 'fclose' (declared at c:\\program files (x86)\\windows kits\\10\\include\\10.0.18362.0\\ucrt\\stdio.h:147)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+                          },
+                          "region": {
+                            "startLine": 16,
+                            "startColumn": 8
+                          }
+                        },
+                        "message": {
+                          "text": "'file' should not be NULL, because this is not consistent with the SAL annotation on 'fclose'"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26812",
+          "message": {
+            "text": "The enum type 'FREE_IMAGE_FORMAT' is unscoped. Prefer 'enum class' over 'enum' (Enum.3)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                },
+                "region": {
+                  "startLine": 37,
+                  "startColumn": 21,
+                  "endLine": 37,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?LoadCursorTexture@TextureLoader@@SAXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAUGLFWwindow@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6386",
+          "message": {
+            "text": "Buffer overrun while writing to 'flipBits':  the writable size is 'size' bytes, but '2' bytes might be written."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                },
+                "region": {
+                  "startLine": 166,
+                  "startColumn": 48,
+                  "endLine": 166,
+                  "endColumn": 79
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?LoadCubeMap@TextureLoader@@CAIABV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 140,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 141,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 143,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 144,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 146,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 146,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 147,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 148,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 149,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 152,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 153,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 13,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 154,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 14,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 155,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 15,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 157,
+                            "startColumn": 36
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 16,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 157,
+                            "startColumn": 47
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 17,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 158,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 18,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 160,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 19,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 161,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 20,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 162,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 21,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 163,
+                            "startColumn": 36
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 22,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 164,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 23,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 165,
+                            "startColumn": 8
+                          }
+                        },
+                        "message": {
+                          "text": "'flipBits' is a 0 byte array"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 24,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 25,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this loop, (assume 'y>0')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 26,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 71
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 27,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 44
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 28,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "Continue this loop, (assume 'y>0')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 29,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 71
+                          }
+                        },
+                        "message": {
+                          "text": "Invalid write to 'flipBits', (outside its writable range)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "Dereferencing NULL pointer 'flipBits'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                },
+                "region": {
+                  "startLine": 166,
+                  "startColumn": 48,
+                  "endLine": 166,
+                  "endColumn": 79
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?LoadCubeMap@TextureLoader@@CAIABV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 140,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 141,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 143,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 144,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 146,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 146,
+                            "startColumn": 21
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 147,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 148,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 149,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 150,
+                            "startColumn": 27
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 152,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 153,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 13,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 154,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 14,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 155,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 15,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 157,
+                            "startColumn": 36
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 16,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 157,
+                            "startColumn": 47
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 17,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 158,
+                            "startColumn": 8
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 18,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 160,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 19,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 161,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 20,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 162,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 21,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 163,
+                            "startColumn": 36
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 22,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 164,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 23,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 165,
+                            "startColumn": 8
+                          }
+                        },
+                        "message": {
+                          "text": "'flipBits' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 24,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 25,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "Enter this loop, (assume 'y>0')"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 26,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+                          },
+                          "region": {
+                            "startLine": 166,
+                            "startColumn": 71
+                          }
+                        },
+                        "message": {
+                          "text": "'flipBits' is dereferenced, but may still be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6001",
+          "message": {
+            "text": "Using uninitialized memory 'blendFactor'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 31,
+                  "endLine": 54,
+                  "endColumn": 31
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?BindTextures@SkyboxRenderer@@AAEXHHHHM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 28,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 29,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 30,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "'blendFactor' is not initialized"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 32,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 36,
+                            "startColumn": 34
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 40,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 30
+                          }
+                        },
+                        "message": {
+                          "text": "'blendFactor' is an In/Out argument to 'SkyboxShader::LoadBlendFactor' (declared at c:\\users\\tin\\source\\repos\\marchingcubes\\alpha\\skyboxshader.h:37)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 55,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 13,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 31
+                          }
+                        },
+                        "message": {
+                          "text": "'blendFactor' is used, but may not have been initialized"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6001",
+          "message": {
+            "text": "Using uninitialized memory 'texture2'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 38,
+                  "endLine": 53,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?BindTextures@SkyboxRenderer@@AAEXHHHHM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 28,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 29,
+                            "startColumn": 7
+                          }
+                        },
+                        "message": {
+                          "text": "'texture2' is not initialized"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 30,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 32,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 36,
+                            "startColumn": 34
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 40,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 16
+                          }
+                        },
+                        "message": {
+                          "text": "'texture2' is an In/Out argument to 'glBindTexture' (declared at c:\\users\\tin\\source\\repos\\marchingcubes\\external\\glew\\include\\glew.h:853)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 55,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 13,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "'texture2' is used, but may not have been initialized"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6001",
+          "message": {
+            "text": "Using uninitialized memory 'texture1'."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                },
+                "region": {
+                  "startLine": 51,
+                  "startColumn": 38,
+                  "endLine": 51,
+                  "endColumn": 38
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?BindTextures@SkyboxRenderer@@AAEXHHHHM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 28,
+                            "startColumn": 7
+                          }
+                        },
+                        "message": {
+                          "text": "'texture1' is not initialized"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 29,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 30,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 32,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 36,
+                            "startColumn": 34
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 40,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '<branch condition>' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 50,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 16
+                          }
+                        },
+                        "message": {
+                          "text": "'texture1' is an In/Out argument to 'glBindTexture' (declared at c:\\users\\tin\\source\\repos\\marchingcubes\\external\\glew\\include\\glew.h:853)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 52,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 53,
+                            "startColumn": 16
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 54,
+                            "startColumn": 30
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 55,
+                            "startColumn": 2
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 13,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 51,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "'texture1' is used, but may not have been initialized"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'ShadowBox::minZ' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 2,
+                  "endLine": 52,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0ShadowBox@@QAE@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": [],
+          "properties": {
+            "targetSymbol": "ShadowBox::minZ"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'ShadowBox::minY' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 2,
+                  "endLine": 52,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0ShadowBox@@QAE@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": [],
+          "properties": {
+            "targetSymbol": "ShadowBox::minY"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'ShadowBox::maxZ' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 2,
+                  "endLine": 52,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0ShadowBox@@QAE@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": [],
+          "properties": {
+            "targetSymbol": "ShadowBox::maxZ"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'ShadowBox::minX' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 2,
+                  "endLine": 52,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0ShadowBox@@QAE@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": [],
+          "properties": {
+            "targetSymbol": "ShadowBox::minX"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'ShadowBox::maxY' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 2,
+                  "endLine": 52,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0ShadowBox@@QAE@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": [],
+          "properties": {
+            "targetSymbol": "ShadowBox::maxY"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'ShadowBox::maxX' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 2,
+                  "endLine": 52,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0ShadowBox@@QAE@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": [],
+          "properties": {
+            "targetSymbol": "ShadowBox::maxX"
+          }
+        },
+        {
+          "ruleId": "C26817",
+          "message": {
+            "text": "Potentially expensive copy of variable 'point' in range-for loop. Consider making it a const reference (es.71)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 13,
+                  "endLine": 76,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Update@ShadowBox@@QAEXABVCamera@@ABUVec3@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "Dereferencing NULL pointer 'vertArray'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 4,
+                  "endLine": 47,
+                  "endColumn": 32
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Render@LineRenderer@@QAEXABV?$vector@V?$shared_ptr@VLine@@@std@@V?$allocator@V?$shared_ptr@VLine@@@std@@@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 33,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 34,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 35,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 37,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "'vertArray' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 38,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 40,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 41,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 42,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 43,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '++counter>MAX_LINES' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 47,
+                            "startColumn": 25
+                          }
+                        },
+                        "message": {
+                          "text": "'vertArray' is dereferenced, but may still be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6386",
+          "message": {
+            "text": "Buffer overrun while writing to 'vertArray':  the writable size is 't_lines.size()*sizeof(Vec3)*(unsigned int)2' bytes, but '8' bytes might be written."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 4,
+                  "endLine": 48,
+                  "endColumn": 32
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Render@LineRenderer@@QAEXABV?$vector@V?$shared_ptr@VLine@@@std@@V?$allocator@V?$shared_ptr@VLine@@@std@@@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 33,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 34,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 35,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 37,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "'vertArray' is a 0 byte array"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 38,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 40,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 41,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 42,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 43,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '++counter>MAX_LINES' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 44,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 45,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 47,
+                            "startColumn": 25
+                          }
+                        },
+                        "message": {
+                          "text": "'pointer' may equal 1"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 48,
+                            "startColumn": 25
+                          }
+                        },
+                        "message": {
+                          "text": "Invalid write to 'vertArray', (outside its writable range)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "Dereferencing NULL pointer 'colorArray'. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                },
+                "region": {
+                  "startLine": 63,
+                  "startColumn": 4,
+                  "endLine": 63,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Render@LineRenderer@@QAEXABV?$vector@V?$shared_ptr@VLine@@@std@@V?$allocator@V?$shared_ptr@VLine@@@std@@@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 33,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 34,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 35,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 37,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 38,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "'colorArray' may be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 40,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 41,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 42,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 56,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 58,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 59,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '++counter>MAX_LINES' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 60,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 13,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 61,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 14,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 63,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "'colorArray' is dereferenced, but may still be NULL"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C6386",
+          "message": {
+            "text": "Buffer overrun while writing to 'colorArray':  the writable size is 't_lines.size()*sizeof(Vec4)*(unsigned int)2' bytes, but '8' bytes might be written."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                },
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 4,
+                  "endLine": 64,
+                  "endColumn": 33
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "?Render@LineRenderer@@QAEXABV?$vector@V?$shared_ptr@VLine@@@std@@V?$allocator@V?$shared_ptr@VLine@@@std@@@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "index": 0,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 33,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 1,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 34,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 2,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 35,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 3,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 37,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 4,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 38,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "'colorArray' is a 0 byte array"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 5,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 40,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 6,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 41,
+                            "startColumn": 7
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 7,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 42,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 8,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 56,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 9,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 57,
+                            "startColumn": 11
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 10,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 58,
+                            "startColumn": 1
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 11,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 59,
+                            "startColumn": 18
+                          }
+                        },
+                        "message": {
+                          "text": "Skip this branch, (assume '++counter>MAX_LINES' is false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "index": 12,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 60,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 13,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 61,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "index": 14,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 63,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "'pointer' may equal 1"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "essential"
+                    },
+                    {
+                      "index": 15,
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+                          },
+                          "region": {
+                            "startLine": 64,
+                            "startColumn": 26
+                          }
+                        },
+                        "message": {
+                          "text": "Invalid write to 'colorArray', (outside its writable range)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "Variable 'FPSCounter::m_currentTime' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FPSCounter.h"
+                },
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 2,
+                  "endLine": 16,
+                  "endColumn": 2
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "??0FPSCounter@@QAE@N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": [],
+          "properties": {
+            "targetSymbol": "FPSCounter::m_currentTime"
+          }
+        },
+        {
+          "ruleId": "C6262",
+          "message": {
+            "text": "Function uses '25084' bytes of stack:  exceeds /analyze:stacksize '16384'.  Consider moving some data to heap."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/Main.cpp"
+                },
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 5,
+                  "endLine": 9,
+                  "endColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "decoratedName": "main",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "suppressions": []
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.28.29335.0"
+        }
+      },
+      "invocations": [
+        {
+          "commandLine": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x86\\c1xx.dll\" -ACf{1F7B090C-16DB-4822-966A-A93D26ED4681} -ACpmspft140.dll -Alint -D_PREFAST_ -D_AST_FE_ -Analyze -zm0x0055B1D0 -il C:\\Users\\Tin\\AppData\\Local\\Temp\\_CL_0c73a43dast -typedil -f Main.cpp -Ze -D_MSC_EXTENSIONS -Zp8 -Gs -pc \\:/ -D_MSC_VER=1928 -D_MSC_FULL_VER=192829335 -D_MSC_BUILD=0 -D_WIN32 -D_M_IX86=600 -D_M_IX86_FP=2 -GR -D_CPPRTTI -nologo -W 3 -diagnostics:column -D_GUARDOVERFLOW_CRT_ALLOCATORS=1 -GF -Og -Ot -Oi -ltcg -DCODE_ANALYSIS -DWIN32 -DNDEBUG -D_CONSOLE -D_CRT_SECURE_NO_WARNINGS -DGLEW_STATIC -D_UNICODE -DUNICODE -EHs -D_CPPUNWIND -EHc -MD -D_MT -D_DLL -GS -D_M_FP_PRECISE -Zc:wchar_t -Zc:forScope -std:c++17 -FoRelease\\Main.obj -FdRelease\\vc142.pdb -Gd -analyze:projectdirectory C:\\Users\\Tin\\source\\repos\\MarchingCubes\\Alpha -analyze:rulesetdirectory ;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\\\Rule Sets; -analyze:ruleset C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\Team Tools\\Static Analysis Tools\\Rule Sets\\NativeRecommendedRules.ruleset -analyze:quiet -analyze:plugin C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\bin\\HostX86\\x86\\EspXEngine.dll -FC -errorreport:prompt -I C:\\Users\\Tin\\source\\repos\\MarchingCubes\\External\\GLFW\\Include -I C:\\Users\\Tin\\source\\repos\\MarchingCubes\\External\\GLEW\\Include -I C:\\Users\\Tin\\source\\repos\\MarchingCubes\\External\\OpenAL\\Include -I C:\\Users\\Tin\\source\\repos\\MarchingCubes\\External\\FreeImage\\Include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.28.29333\\atlmfc\\include -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\ucrt -I C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Auxiliary\\VS\\UnitTest\\include -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\um -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\shared -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\winrt -I C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.18362.0\\cppwinrt -I C:\\Program Files (x86)\\Windows Kits\\NETFXSDK\\4.8\\Include\\um",
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/worldconstants.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/worldconstants.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/math.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec2i.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec3i.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec2.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec3.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec4.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/mat4.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/quaternion.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec4.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec3i.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec3.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec2i.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/vec2.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/time.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/time.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/TextureLoader.h"
+          },
+          "roles": [
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/textureloader.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/external/glew/include/glew.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/external/glfw/include/glfw3.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/external/freeimage/include/freeimage.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/stringmanipulation.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/stringmanipulation.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/quaternion.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ModelLoader.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/modelloader.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/rawmodel.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/math.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/mat4.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/marchingcubes.h"
+          },
+          "roles": [
+            "analysisTarget",
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/Camera.h"
+          },
+          "roles": [
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FileReader.h"
+          },
+          "roles": [
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/SkyboxRenderer.h"
+          },
+          "roles": [
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/ShadowBox.h"
+          },
+          "roles": [
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/LineRenderer.h"
+          },
+          "roles": [
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/FPSCounter.h"
+          },
+          "roles": [
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Tin/source/repos/MarchingCubes/Alpha/Main.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/game.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/engine.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/processinfo.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/masterrenderer.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/entity.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/texturedmodel.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/texture.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/entityrenderer.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/entityshader.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/shaderprogram.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/logger.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/filewriter.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/light.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/terrainrenderer.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/terrainshader.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/terrain.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/terraintexturepack.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/heightgenerator.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/skyboxshader.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/skybox.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/shadowmapmaster.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/shadowmapentityrenderer.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/shadowshader.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/shadowframebuffer.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/window.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/input.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/display.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/linemaster.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/lineshader.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/line.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/gameobjects.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/marchingcuberenderer.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/marchingcubeshader.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/tin/source/repos/marchingcubes/alpha/marchingcubevao.h"
+          },
+          "roles": [
+            "responseFile"
+          ]
+        }
+      ]
+    }
+  ]
+}

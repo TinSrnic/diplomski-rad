@@ -1,0 +1,31 @@
+#version 400 core
+
+layout (location = 0) in vec2 position;
+layout (location = 1) in mat4 modelMatrix; //has to be 1 than 5 because when loading from vbo you can use max 4 floats
+layout (location = 5) in vec4 offset;
+layout (location = 6) in float blend;
+
+out vec2 textureCoords;
+out vec4 textureOffset;
+out float blendFactor;
+out vec4 positionRelativeToCamera;
+
+uniform mat4 projectionMatrix;
+uniform mat4 viewMatrix;
+uniform mat4 inverseRotViewMatrix;
+
+void main(void){
+	
+	textureCoords = position + vec2(0.5, 0.5);
+	textureCoords.y = 1 - textureCoords.y;
+	textureOffset = offset;
+	blendFactor = blend;
+	
+	//you want to cancel out the rotation that the rotation matrix of the camera applies, or rather you want the rotation to translate the points to a different spot
+	//but you don't want it to rotate the quad away from the camera, therefore inverse rotation matrix of camera
+	//Mat4::Translation(t_particle.GetPosition()) * Mat4::Invert(Mat4::RotationFromDirection(t_camera.GetViewDirection())) * Mat4::Scale(Vec3(t_particle.GetScale()))
+	
+	positionRelativeToCamera = viewMatrix * modelMatrix * inverseRotViewMatrix * vec4(position, 0.0, 1.0);
+	
+	gl_Position = projectionMatrix * positionRelativeToCamera;
+}

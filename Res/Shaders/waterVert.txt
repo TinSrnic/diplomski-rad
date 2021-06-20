@@ -1,0 +1,30 @@
+#version 400 core
+
+layout (location = 0) in vec3 position;
+
+out vec4 clipSpace;
+out vec2 textureCoords;
+out vec3 toCameraVector;
+out vec3 fromLightVector;
+
+uniform mat4 projectionMatrix = mat4(1.0f);
+uniform mat4 viewMatrix = mat4(1.0f);
+uniform mat4 modelMatrix = mat4(1.0f);
+
+uniform vec3 cameraPosition;
+uniform vec3 lightPosition;
+
+const float tiling = 24.0;
+
+void main(void){
+	vec4 worldPos = modelMatrix * vec4(position, 1.0);
+	
+	textureCoords = vec2(position.x / 2.0 + 0.5, position.z / 2.0 + 0.5) * tiling;
+	toCameraVector = cameraPosition - worldPos.xyz;
+	vec4 positionRelativeToCamera = viewMatrix * worldPos; 
+	
+	clipSpace = projectionMatrix * positionRelativeToCamera;
+	fromLightVector = worldPos.xyz - lightPosition;
+	
+ 	gl_Position = clipSpace;
+}

@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Maths">
+      <UniqueIdentifier>{e1d41cca-9675-4cad-b4d7-b2fa1dd12f79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Renderers">
+      <UniqueIdentifier>{550b1391-40c5-4196-8749-3ef7a68d4c1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Display">
+      <UniqueIdentifier>{a3c8a3f5-133f-4e95-b72f-027ea584d4ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Models">
+      <UniqueIdentifier>{4ee1be85-e50f-4099-ac2e-6a014ad87ad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility">
+      <UniqueIdentifier>{e27b6596-b8ac-47f0-8952-32b63b022b85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Terrain">
+      <UniqueIdentifier>{df0b1d86-7947-4603-8344-272d38838f19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Shadows">
+      <UniqueIdentifier>{1d595352-61bb-4789-be0f-56aeca8bf626}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Skybox">
+      <UniqueIdentifier>{bb21c21c-ebdb-4bb5-9a80-8fce5ad0acc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{fb607015-3369-4ec4-a921-1c0c4a3476b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Camera">
+      <UniqueIdentifier>{5b681c6c-234c-481d-9c77-5758e61e3931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Light">
+      <UniqueIdentifier>{0759077b-5d5e-400c-8432-96a53136c756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility\Loaders">
+      <UniqueIdentifier>{05e3f958-9684-4d1e-8fb9-8bca2723baf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility\Time">
+      <UniqueIdentifier>{8f9035a6-0b7a-4f4b-aa4d-58b07d55b98e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility\Input">
+      <UniqueIdentifier>{bb4f2731-34ee-4c19-8eef-fad4620e4d22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Lines">
+      <UniqueIdentifier>{77a88642-5bfe-4218-9b49-a6ce054ce72b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility\Display">
+      <UniqueIdentifier>{dfc2d55e-944b-478b-a8ff-62fad595f705}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Mat4">
+      <UniqueIdentifier>{2a3ca200-2d17-4e55-9f4e-304cfcf8f4e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Vec3">
+      <UniqueIdentifier>{d0f79485-cedf-405f-8750-0c92d05bd268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Vec2">
+      <UniqueIdentifier>{ce6ef258-201a-4baf-b1fe-b5572edca0b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Vec2i">
+      <UniqueIdentifier>{1f4c9920-bfbd-4759-b87d-4c4c0e93c214}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Vec3i">
+      <UniqueIdentifier>{6852ce48-9476-4a8b-ae51-0d2c6cdcdb73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Quaternion">
+      <UniqueIdentifier>{c9451226-7622-488e-8a7b-8b5756165c04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility\StringManipulation">
+      <UniqueIdentifier>{4a3ed111-ef82-4769-a062-c67325c38259}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Math">
+      <UniqueIdentifier>{c5150685-8d31-41df-a64c-03d5d9cda77d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Vec4">
+      <UniqueIdentifier>{a809380e-61d7-4b55-ae42-318015cc4983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utility\GameObjects">
+      <UniqueIdentifier>{fc67f96b-22f2-446d-8cbb-7548fb609e2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\MarchingCube">
+      <UniqueIdentifier>{cd7cc031-883d-43e3-9114-05261d83c0b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ComputeShader">
+      <UniqueIdentifier>{1398296f-c8c0-4044-9a69-4eba12dd8065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Maths\Vec4i">
+      <UniqueIdentifier>{a18d098b-05c0-45ff-8376-a45cac3f1e0f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Header Files\Utility\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Header Files\Utility\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Display.cpp">
+      <Filter>Header Files\Utility\Display</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelLoader.cpp">
+      <Filter>Header Files\Utility\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureLoader.cpp">
+      <Filter>Header Files\Utility\Loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Mat4.cpp">
+      <Filter>Header Files\Maths\Mat4</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec3.cpp">
+      <Filter>Header Files\Maths\Vec3</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec2.cpp">
+      <Filter>Header Files\Maths\Vec2</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec4.cpp">
+      <Filter>Header Files\Maths\Vec4</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec2i.cpp">
+      <Filter>Header Files\Maths\Vec2i</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec3i.cpp">
+      <Filter>Header Files\Maths\Vec3i</Filter>
+    </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Header Files\Maths\Quaternion</Filter>
+    </ClCompile>
+    <ClCompile Include="StringManipulation.cpp">
+      <Filter>Header Files\Utility\StringManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Header Files\Maths\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldConstants.cpp">
+      <Filter>Header Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects.cpp">
+      <Filter>Header Files\Utility\GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="MarchingCubes.h">
+      <Filter>Header Files\MarchingCube</Filter>
+    </ClCompile>
+    <ClCompile Include="FontLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vec4i.cpp">
+      <Filter>Header Files\Maths\Vec4i</Filter>
+    </ClCompile>
+    <ClCompile Include="GameOfLife.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputeShader.cpp">
+      <Filter>Header Files\ComputeShader</Filter>
+    </ClCompile>
+    <ClCompile Include="Swarm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileReader.cpp">
+      <Filter>Header Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="FileWriter.cpp">
+      <Filter>Header Files\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Boids.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Boids3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RVO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SFM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MousePickerOrthographic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TexturedModel.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="RawModel.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterRenderer.h">
+      <Filter>Header Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="FPSCounter.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Header Files\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Header Files\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainTexturePack.h">
+      <Filter>Header Files\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldConstants.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="HeightGenerator.h">
+      <Filter>Header Files\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessInfo.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowBox.h">
+      <Filter>Header Files\Shadows</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowFrameBuffer.h">
+      <Filter>Header Files\Shadows</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowMapMaster.h">
+      <Filter>Header Files\Shadows</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowShader.h">
+      <Filter>Header Files\Shadows</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FileWriter.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Skybox.h">
+      <Filter>Header Files\Skybox</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyboxShader.h">
+      <Filter>Header Files\Skybox</Filter>
+    </ClInclude>
+    <ClInclude Include="SkyboxRenderer.h">
+      <Filter>Header Files\Skybox</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityRenderer.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityShader.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Header Files\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainRenderer.h">
+      <Filter>Header Files\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainShader.h">
+      <Filter>Header Files\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelLoader.h">
+      <Filter>Header Files\Utility\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureLoader.h">
+      <Filter>Header Files\Utility\Loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderProgram.h">
+      <Filter>Header Files\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowMapEntityRenderer.h">
+      <Filter>Header Files\Shadows</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Header Files\Utility\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Header Files\Utility\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="LineMaster.h">
+      <Filter>Header Files\Lines</Filter>
+    </ClInclude>
+    <ClInclude Include="LineRenderer.h">
+      <Filter>Header Files\Lines</Filter>
+    </ClInclude>
+    <ClInclude Include="LineShader.h">
+      <Filter>Header Files\Lines</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Header Files\Lines</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Display.h">
+      <Filter>Header Files\Utility\Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Mat4.h">
+      <Filter>Header Files\Maths\Mat4</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec3.h">
+      <Filter>Header Files\Maths\Vec3</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2.h">
+      <Filter>Header Files\Maths\Vec2</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec4.h">
+      <Filter>Header Files\Maths\Vec4</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2i.h">
+      <Filter>Header Files\Maths\Vec2i</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec3i.h">
+      <Filter>Header Files\Maths\Vec3i</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Header Files\Maths\Quaternion</Filter>
+    </ClInclude>
+    <ClInclude Include="StringManipulation.h">
+      <Filter>Header Files\Utility\StringManipulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Header Files\Maths\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects.h">
+      <Filter>Header Files\Utility\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="MarchingCubeShader.h">
+      <Filter>Header Files\MarchingCube</Filter>
+    </ClInclude>
+    <ClInclude Include="MarchingCubeRenderer.h">
+      <Filter>Header Files\MarchingCube</Filter>
+    </ClInclude>
+    <ClInclude Include="MarchingCubeVAO.h">
+      <Filter>Header Files\MarchingCube</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIMaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GUIShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextMaster.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TextShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FontLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputeShader.h">
+      <Filter>Header Files\ComputeShader</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomRandom.h">
+      <Filter>Header Files\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec4i.h">
+      <Filter>Header Files\Maths\Vec4i</Filter>
+    </ClInclude>
+    <ClInclude Include="GameOfLife.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Swarm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boids3D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SFM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RVO.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MousePickerOrthographic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

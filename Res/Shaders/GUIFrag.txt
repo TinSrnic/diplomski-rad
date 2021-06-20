@@ -1,0 +1,41 @@
+#version 400 core
+
+in vec2 texCoord;
+in vec3 normalVector;
+in vec4 customColor;
+
+out vec4 out_color;
+
+uniform sampler2D tex;
+
+uniform float affectedByLight;
+uniform vec3 viewDirection;
+uniform vec3 lightDirection;
+uniform int useCustomColor;
+uniform int textureMultiple;
+
+void main(void){
+	vec4 color = texture(tex, texCoord * textureMultiple);
+	
+	if(affectedByLight > 0.5) {
+		vec3 unitNormal = normalize(normalVector);
+		vec3 unitLightDirection = normalize(lightDirection);
+		float difuse = dot(unitNormal, -unitLightDirection); //difuse
+		difuse = max(difuse, 0.2); //adds ambient light
+		
+		vec3 reflectedLight = reflect(unitNormal, -unitLightDirection);
+		float specular = dot(-normalize(viewDirection), reflectedLight);
+		specular = max(specular, 0.0);
+		
+		out_color = (color * difuse);
+	} else {
+		out_color = color;
+	}
+	
+	if(useCustomColor == 1 && color.a > 0.5) {
+		//out_color = customColor;
+		out_color = mix(customColor, color, 0.7);
+	} else {
+		out_color.a = color.a;
+	}
+}

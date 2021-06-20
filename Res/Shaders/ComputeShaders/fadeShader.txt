@@ -1,0 +1,16 @@
+#version 430
+uniform float deltaTime;
+layout (binding = 0, rgba8) uniform image2D destTex;
+layout (local_size_x = 8, local_size_y = 8) in;
+
+void main() {
+	ivec2 id = ivec2(gl_GlobalInvocationID.xy);
+
+	float evaporateSpeed = 0.95;
+	vec4 original = imageLoad(destTex, id);
+	
+	float decay = evaporateSpeed * deltaTime;
+	vec4 final = vec4(max(0, original.x - decay), max(0, original.y - decay), max(0, original.z - decay), 1);
+
+	imageStore(destTex, id, final);
+}

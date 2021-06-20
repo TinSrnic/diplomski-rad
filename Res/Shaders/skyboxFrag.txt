@@ -1,0 +1,23 @@
+#version 400 core
+
+in vec3 texCoords;
+out vec4 outColor;
+
+uniform samplerCube cubeMapFirst;
+uniform samplerCube cubeMapSecond;
+
+uniform vec3 fogColor;
+uniform float blendFactor;
+
+const float lowerLimit = 0.0;
+const float upperLimit = 20.0;
+
+void main(void){
+	vec4 first = texture(cubeMapFirst, texCoords);
+	vec4 second = texture(cubeMapSecond, texCoords);
+	vec4 cubeColor = mix(first, second, blendFactor);
+	
+	float factor = (texCoords.y - lowerLimit) / (upperLimit - lowerLimit);
+	factor = clamp(factor, 0.0, 1.0);
+	outColor = mix(vec4(fogColor, 1.0), cubeColor, factor);
+}

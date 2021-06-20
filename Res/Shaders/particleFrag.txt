@@ -1,0 +1,24 @@
+#version 400 core
+
+in vec2 textureCoords;
+in vec4 textureOffset;
+in float blendFactor;
+in vec4 positionRelativeToCamera;
+
+out vec4 out_color;
+
+uniform sampler2D textureAtlas;
+uniform float numberOfRows;
+
+uniform float drawDistance;
+
+void main(void){
+	if(length(positionRelativeToCamera) > drawDistance) {
+		discard;
+	}
+
+	vec2 textureCoords1 = textureCoords / numberOfRows + textureOffset.xy;
+	vec2 textureCoords2 = textureCoords / numberOfRows + textureOffset.zw;
+	
+	out_color = mix(texture(textureAtlas, textureCoords1), texture(textureAtlas, textureCoords2), blendFactor);
+}

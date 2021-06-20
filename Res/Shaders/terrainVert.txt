@@ -1,0 +1,59 @@
+#version 400 core
+
+layout (location = 0) in vec3 position;
+layout (location = 1) in vec2 UV;
+layout (location = 2) in vec3 normal;
+
+const int MAX_LIGHTS = 4;
+
+out vec2 textureCoords;
+out vec3 surfaceNormal;
+out vec3 toLightVector[MAX_LIGHTS];
+out vec3 toCameraVector;
+
+out float visibility; //fog
+
+out vec4 shadowCoords;
+
+uniform mat4 projectionMatrix = mat4(1.0f);
+uniform mat4 viewMatrix = mat4(1.0f);
+uniform mat4 modelMatrix = mat4(1.0f);
+
+uniform vec3 lightPos[4];
+
+uniform vec4 clipPlane;
+
+uniform float density = 0.0035; //density of the fog
+uniform float gradient = 5.0; //how the fog shifts from complete fog to no fog
+
+uniform mat4 toShadowSpace; //shadowProjectionMatrix * lightViewMatrix
+uniform float shadowDistance = 150.0; //max distance in which shadows are drawn
+uniform float shadowTransition = 10.0; //to smooth out the shadows when going from the shadow box to outside
+
+void main(void){
+	
+	vec4 worldPos = modelMatrix * vec4(position, 1.0);
+	shadowCoords = 0.5 + 0.5 * toShadowSpace * worldPos;
+	
+	vec4 positionRelativeToCamera = viewMatrix * worldPos;
+ 	gl_Position = projectionMatrix * positionRelativeToCamera;
+	
+	//doesn't do anything if cliping is not enabled
+	gl_ClipDistance[0] = dot(worldPos, clipPlane);
+	
+	textureCoords = UV;
+	surfaceNormal = normalize((modelMatrix * vec4(normal, 0.0f)).xyz);
+	for(int i = 0; i < MAX_LIGHTS; i++) {
+		toLightVector[i] = lightPos[i] - worldPos.xyz;
+	}
+	toCameraVector = (inverse(viewMatrix) * vec4(0.0, 0.0, 0.0, 1.0)).xyz - worldPos.xyz;
+	
+	float distanceFromCamera = length(positionRelativeToCamera.xyz);
+	visibility = exp(-pow((distanceFromCamera * density), gradient));
+	visibility = clamp(visibility, 0.0, 1.0);
+	
+	distanceFromCamera = distanceFromCamera - (shadowDistance - shadowTransition);
+	distanceFromCamera = distanceFromCamera / shadowTransition;
+	distanceFromCamera = clamp(distanceFromCamera, 0.0, 1.0);
+	shadowCoords.w = 1.0 - distanceFromCamera;
+}

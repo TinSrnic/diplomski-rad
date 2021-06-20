@@ -1,0 +1,79 @@
+#version 400 core
+
+//names have to match vertex shader
+in vec2 textureCoordinates;
+in vec3 surfaceNormal;
+in vec3 toLightVector[4];
+in vec3 toCameraVector;
+in float visibility;
+in vec4 shadowCoords;
+
+out vec4 outColor;
+
+uniform sampler2D modelTexture;
+uniform sampler2D shadowMap;
+
+uniform vec3 lightColor[4];
+uniform vec3 attenuation[4]; //how the light shifts from bright to less bright depending on distance
+uniform float shineDamper; //how an object absorbs light
+uniform float reflectivity; //how reflective the object is
+
+uniform vec3 skyColor;
+
+const int MAX_LIGHTS = 4;
+const float shadowOffset = 0.01; //so objects don't cast shadows on themselves
+
+uniform float drawDistance;
+
+void main(void){
+	if(length(toCameraVector) > drawDistance) {
+		discard;
+	}
+	
+	float lightFactor = 1.0;
+	//values from 0 - 1, 0 is the closest and 1 is furthest
+	float nearestObject = texture(shadowMap, shadowCoords.xy).r;
+	if(shadowCoords.z > nearestObject + shadowOffset) {
+		lightFactor = 1.0;// - (shadowCoords.w * 0.4);
+	}
+
+	vec3 unitNormal = normalize(surfaceNormal);
+	vec3 unitCamera = normalize(toCameraVector);
+	
+	vec4 totalColor = vec4(0.0, 0.0, 0.0, 1.0);
+	vec3 totalSpecular = vec3(0.0, 0.0, 0.0); //the little shiny spots on objects caused by reflecting the light where it is brightest
+	vec3 totalDiffuse = vec3(0.0, 0.0, 0.0); //the regular light you think of in everyday life
+	
+	for(int i = 0; i < MAX_LIGHTS; i++) {
+		float distanceToLight = length(toLightVector[i]);
+		//x + y * distance + z * distance^2
+		float attenuationFactor = attenuation[i].x + attenuation[i].y * distanceToLight + attenuation[i].z * distanceToLight * distanceToLight;
+	
+		vec3 unitLightVector = normalize(toLightVector[i]);
+		float nDotL = dot(unitNormal, unitLightVector); //how much the normal and the light match up
+		float brightness = max(0.0f, nDotL); //brightness can't be lower then 0
+		totalDiffuse = totalDiffuse + (brightness * lightColor[i]) / attenuationFactor;
+		
+		vec3 unitLightDirection = -unitLightVector;
+		vec3 reflectedLightDirection = normalize(reflect(unitLightDirection, unitNormal));
+		
+		//if the camera is pointing directly at the reflected light it will see a specular glow (little white spot)
+		float specularFactor = dot(unitCamera, reflectedLightDirection); //value between -1 - 1
+		specularFactor = max(0.0, specularFactor);
+		float specularDamp = pow(specularFactor, shineDamper);
+		totalSpecular = totalSpecular + (specularDamp * reflectivity * lightColor[i]) / attenuationFactor; //has to be scales from 0-4 to 0-1
+	}
+	
+	vec4 textureColor = texture(modelTexture, textureCoordinates);
+	if(textureColor.a < 0.5) { 
+		discard;
+	}
+	
+	//0.2 because it adds ambient light so that dark spots aren't black
+	totalDiffuse = max(totalDiffuse, 0.4) * lightFactor;
+	
+	//totalDiffuse expanded with 1 and specular with 0 so that in the sum they give 1, because you don't what w > 1
+	totalColor = totalColor + vec4(totalDiffuse, 1.0) * textureColor + vec4(totalSpecular, 1.0);	
+	totalColor = mix(vec4(skyColor, 1.0), totalColor, visibility);
+	outColor = totalColor;
+}
