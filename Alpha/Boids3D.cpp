@@ -21,10 +21,54 @@ Vec3 intersectPoint(Vec3 rayVector, Vec3 rayPoint, Vec3 planeNormal, Vec3 planeP
 }
 
 Vec3 findDirection(std::vector<Vec3>& rayDirections, Vec3 position, Vec3 velocity, Vec3 planeNormal, Vec3 planePoint) {
+ 	Quaternion rotationBase = Quaternion::RotationBetween3D(rayDirections[0], velocity);
+	Vec3 normalVelocity = Vec3::Normalize(velocity);
 	for (int i = 0; i < rayDirections.size(); i++) {
-		Vec3 dir = rayDirections[i];
-		Vec3 intersect = intersectPoint(dir + Vec3::Normalize(velocity), position, planeNormal, planePoint);
-		if ((position - intersect).Length() > 15.0f) {
+		Vec3 dir = Quaternion::RotatePoint(rotationBase, rayDirections[i]);
+		Vec3 intersect = intersectPoint(dir, position, planeNormal, planePoint);
+		if ((position - intersect).Length() > 50) {
+ 			return dir;
+		}
+	}
+
+	return Vec3(1, 0, 0);
+}
+
+Vec3 intersectionWithSphere(Vec3& position, Vec3& velocity, Vec3& sphereCenter, float& sphereRadius) {
+	Vec3 o = position;
+	Vec3 c = sphereCenter;
+	Vec3 u = Vec3::Normalize(velocity);
+
+	float delta = pow(Vec3::Dot(u, (o - c)), 2) - (pow((o - c).Length(), 2) - sphereRadius * sphereRadius);
+	float d = 0;
+	if (abs(delta) < 0.0001) {
+		d = -Vec3::Dot(u, (o - c));
+	}
+	else if (delta < 0) {
+		return Vec3(-50000);
+	}
+	else {
+		d = -Vec3::Dot(u, (o - c));
+		float test = Vec3::Dot(u, (o - c));
+		Vec3 point1 = u * (d + sqrt(delta));
+		Vec3 point2 = u * (d - sqrt(delta));
+
+		if ((o - point1).Length() < (o - point2).Length()) {
+			return point1;
+		}
+		else {
+			return point2;
+		}
+	}
+}
+
+Vec3 findDirectionSphere(std::vector<Vec3>& rayDirections, Vec3 position, Vec3 velocity, Vec3 sphereCenter, float sphereRadius) {
+	Quaternion rotationBase = Quaternion::RotationBetween3D(rayDirections[0], velocity);
+	Vec3 normalVelocity = Vec3::Normalize(velocity);
+	for (int i = 0; i < rayDirections.size(); i++) {
+		Vec3 dir = Quaternion::RotatePoint(rotationBase, rayDirections[i]);
+		Vec3 intersect = intersectionWithSphere(position, velocity, sphereCenter, sphereRadius);
+		if ((position - intersect).Length() > 50) {
 			return dir;
 		}
 	}
@@ -66,37 +110,14 @@ Boids3D::Boids3D(int agentCount) {
 	m_minSteerForce = 0;
 	m_maxSteerForce = 20;
 	m_enableTarget = true;
-	m_target = Vec3(25, 75, 40);
-	/*for (int i = 0; i < agentCount; ++i) {
+	m_target = Vec3(50, 50, 50);
+	for (int i = 0; i < agentCount; ++i) {
 		Vec3 position = Vec3(Vec3(rand() % 100, rand() % 100, rand() % 100));
+		
 		Vec3 velocity = Vec3::Normalize(Vec3(random01(), random01(), random01())) * ((rand() % ((int)m_maxSpeed - 1)) + 1);
 		if (velocity.x != velocity.x) {
 			velocity = Vec3(1, 0, 0);
 		}
-		Boid3D newBoid = Boid3D(position, velocity);
-		m_agents.push_back(newBoid);
-	}*/
-
-	for (int i = 0; i < 100; ++i) {
-		Vec3 position = Vec3(50.0f, 50.0f, 100.0f) + Vec3(-25 * i, 25 * i, -75 * i) / 40.0f;
-		Vec3 velocity = Vec3::Normalize(Vec3(-25, 25, -75));
-
-		position += Vec3(random01(), random01(), random01()) * 3;
-
-		Boid3D newBoid = Boid3D(position, velocity);
-		m_agents.push_back(newBoid);
-	}
-	for (int i = 100; i < 200; ++i) {
-		Vec3 position = Vec3(50.0f, 50.0f, 100.0f) + Vec3(25 * (i - 100), 25 * (i - 100), -25 * (i - 100)) / 40.0f;
-		position += Vec3(random01(), random01(), random01()) * 3;
-		Vec3 velocity = Vec3::Normalize(Vec3(25, 25, -25));
-		Boid3D newBoid = Boid3D(position, velocity);
-		m_agents.push_back(newBoid);
-	}
-	for (int i = 200; i < 300; ++i) {
-		Vec3 position = Vec3(50.0f, 50.0f, 100.0f) + Vec3(0, -25 * (i - 200), -50 * (i - 200)) / 40.0f;
-		position += Vec3(random01(), random01(), random01()) * 3;
-		Vec3 velocity = Vec3::Normalize(Vec3(0, -25, -50));
 		Boid3D newBoid = Boid3D(position, velocity);
 		m_agents.push_back(newBoid);
 	}
@@ -116,6 +137,30 @@ Boids3D::Boids3D(int agentCount) {
 		float y = sin(inclination) * sin(azimuth);
 		float z = cos(inclination);
 		m_directions.push_back(Vec3(x, y, z));
+	}
+
+	m_planes = std::vector<std::pair<Vec3, Vec3>>();
+	m_planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(1, 0, 0), Vec3(0, 0, 0)));
+	m_planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(1, 0, 0), Vec3(100, 0, 0)));
+	m_planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 1, 0), Vec3(0, 0, 0)));
+	m_planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 1, 0), Vec3(0, 100, 0)));
+	m_planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 0, 1), Vec3(0, 0, 0)));
+	m_planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 0, 1), Vec3(0, 0, 100)));
+
+	std::vector<Vec3> torii = std::vector<Vec3>();
+	torii.push_back(Vec3(25, 75, 25));
+	torii.push_back(Vec3(75, 75, 75));
+	torii.push_back(Vec3(50, 25, 50));
+	
+	for (int i = 0; i < 3; ++i) {
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(10, 0, 0), 0.5));
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(-10, 0, 0), 0.5));
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(0, 10, 0), 0.5));
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(0, -10, 0), 0.5));
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(0.7071 * 10, 0.7071 * 10, 0), 0.5));
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(-0.7071 * 10, 0.7071 * 10, 0), 0.5));
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(0.7071 * 10, -0.7071 * 10, 0), 0.5));
+		m_spheres.push_back(std::make_pair<Vec3, float>(torii[i] + Vec3(-0.7071 * 10, -0.7071 * 10, 0), 0.5));
 	}
 
 	m_texture = TextureLoader::LoadTexture("black.png", 1, 0.1, 0.1);
@@ -146,7 +191,7 @@ void Boids3D::run() {
 		
 		if (m_enableTarget) {
 			Vec3 offsetToTarget = (m_target - currentPosition);
-			acceleration += steerTowards(offsetToTarget, currentVelocity) * 30;
+			acceleration += steerTowards(offsetToTarget, currentVelocity) * 500;
 		}
 
 		if (flockCount != 0) {
@@ -164,20 +209,33 @@ void Boids3D::run() {
 			}
 		}
 
-		std::vector<std::pair<Vec3, Vec3>> planes = std::vector<std::pair<Vec3, Vec3>>();
-		planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(1, 0, 0), Vec3(0, 0, 0)));
-		planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(1, 0, 0), Vec3(100, 0, 0)));
-		planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 1, 0), Vec3(0, 0, 0)));
-		planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 1, 0), Vec3(0, 100, 0)));
-		planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 0, 1), Vec3(0, 0, 0)));
-		planes.push_back(std::make_pair<Vec3, Vec3>(Vec3(0, 0, 1), Vec3(0, 0, 100)));
+		for(int j = 0; j < m_planes.size(); ++j) {
+			Vec3 intersect = intersectPoint(currentVelocity, currentPosition, m_planes[j].first, m_planes[j].second);
+			if ((currentPosition - intersect).Length() < 30) {
+  				Vec3 collisionAvoidDir = findDirection(m_directions, currentPosition, currentVelocity, m_planes[j].first, m_planes[j].second);
+				Vec3 collisionAvoidForce = steerTowards(collisionAvoidDir, currentVelocity) * 10;
+				acceleration += collisionAvoidForce;
+			}
 
-		for(int j = 0; j < planes.size(); ++j) {
-			Vec3 intersect = intersectPoint(currentVelocity, currentPosition, planes[j].first, planes[j].second);
-			if ((currentPosition - intersect).Length() < 10) {
-  				Vec3 collisionAvoidDir = findDirection(m_directions, currentPosition, currentVelocity, planes[j].first, planes[j].second);
+			Vec3 boidWallProjection = currentPosition - Vec3::Dot(currentPosition - m_planes[j].second, m_planes[j].first) * m_planes[j].first;
+			Vec3 wallToBoid = currentPosition - boidWallProjection;
+			if (wallToBoid.Length() > 0.01) {
+				acceleration += Vec3::Normalize(wallToBoid) / wallToBoid.Length() * 100;
+			}
+		}
+
+		for (int j = 0; j < m_spheres.size(); ++j) {
+			Vec3 intersect = intersectionWithSphere(currentPosition, currentVelocity, m_spheres[j].first, m_spheres[j].second);
+			if ((currentPosition - intersect).Length() < 30) {
+				Vec3 collisionAvoidDir = findDirectionSphere(m_directions, currentPosition, currentVelocity, m_spheres[j].first, m_spheres[j].second);
 				Vec3 collisionAvoidForce = steerTowards(collisionAvoidDir, currentVelocity) * 100;
 				acceleration += collisionAvoidForce;
+			}
+
+			Vec3 boidSphereProjection = Vec3::Normalize(currentPosition - m_spheres[j].first) * m_spheres[j].second + m_spheres[j].first;
+			Vec3 sphereToBoid = currentPosition - boidSphereProjection;
+			if (sphereToBoid.Length() > 0.01) {
+				acceleration += Vec3::Normalize(sphereToBoid) / sphereToBoid.Length() * 50;
 			}
 		}
 		

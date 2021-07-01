@@ -1,113 +1,22 @@
-﻿  Boids.cpp
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(14,157): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(45,99): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(45,90): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(45,54): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(46,60): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(46,47): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(46,106): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(61,64): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(97,19): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(100,39): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(101,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids.cpp(103,78): warning C4305: 'argument': truncation from 'double' to 'const float'
-  Boids3D.cpp
+﻿  Boids3D.cpp
 C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(20,32): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(37,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(38,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(39,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(59,25): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(81,74): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(81,65): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(81,57): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(90,89): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(90,72): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(90,56): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(97,77): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(97,60): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(107,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(108,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(121,65): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(153,19): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(156,39): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(157,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-  GameObjects.cpp
-  Main.cpp
-C:\Users\Tin\source\repos\Diplomski\Alpha\LineRenderer.h(80,1): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\MarchingCubeVAO.h(40,1): warning C4267: '=': conversion from 'size_t' to 'GLuint', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\MarchingCubeRenderer.h(35,1): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(20,112): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(35,69): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(96,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(100,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(101,42): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(115,73): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(119,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(148,155): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(177,41): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(196,47): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(209,35): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(228,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(232,45): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(233,45): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(247,76): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(251,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Main.cpp(285,158): warning C4305: 'argument': truncation from 'double' to 'const float'
-  RVO.cpp
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(14,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(18,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(19,48): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(24,71): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(39,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(53,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(198,39): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(247,35): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(249,38): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(258,36): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(260,38): warning C4305: '+=': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(279,12): warning C4305: 'argument': truncation from 'double' to 'float'
-  SFM.cpp
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(15,132): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(23,44): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(24,62): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(50,65): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(61,146): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(62,146): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(63,148): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(64,150): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(65,150): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(66,147): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(67,148): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(68,148): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(70,165): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(71,165): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(72,167): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(73,166): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(74,165): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(75,166): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(76,166): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(77,166): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(78,167): warning C4305: 'argument': truncation from 'double' to 'const float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\SFM.cpp(79,166): warning C4305: 'argument': truncation from 'double' to 'const float'
-  Swarm.cpp
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(26,65): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(29,30): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(30,32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(33,43): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(33,29): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(37,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(40,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(60,42): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(61,42): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(62,42): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(63,42): warning C4244: '=': conversion from 'int' to 'GLfloat', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(95,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(96,33): warning C4244: 'argument': conversion from '__int64' to 'GLuint', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\Swarm.cpp(102,33): warning C4244: 'argument': conversion from '__int64' to 'GLuint', possible loss of data
-  TextureLoader.cpp
-C:\Users\Tin\source\repos\Diplomski\Alpha\TextureLoader.cpp(28,76): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Tin\source\repos\Diplomski\Alpha\TextureLoader.cpp(28,69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-C:\Users\Tin\source\repos\Diplomski\Alpha\RVO.cpp(269): warning C4715: 'RVO::in_between': not all control paths return a value
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(81,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(82,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(83,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(103,25): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(115,64): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(115,50): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(115,36): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(117,113): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(128,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(129,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(160,95): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(161,96): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(162,96): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(163,97): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(166,65): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(198,19): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(201,39): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(202,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(63): warning C4715: 'intersectionWithSphere': not all control paths return a value
   Alpha.vcxproj -> C:\Users\Tin\source\repos\Diplomski\x64\Debug\Alpha.exe

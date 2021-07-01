@@ -1,1 +1,26 @@
-﻿  Alpha.vcxproj -> C:\Users\Tin\source\repos\Diplomski\x64\Release\Alpha.exe
+﻿  Boids3D.cpp
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(20,32): warning C4244: 'argument': conversion from 'double' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(81,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(82,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(83,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(103,25): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(115,64): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(115,50): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(115,36): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(117,113): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(128,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(129,23): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(160,95): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(161,96): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(162,96): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(163,97): warning C4305: 'argument': truncation from 'double' to 'const float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(166,65): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(198,19): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(201,39): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+C:\Users\Tin\source\repos\Diplomski\Alpha\Boids3D.cpp(202,37): warning C4244: 'argument': conversion from 'int' to 'const float', possible loss of data
+  Generating code
+  1 of 3653 functions (<0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    13 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Alpha.vcxproj -> C:\Users\Tin\source\repos\Diplomski\x64\Release\Alpha.exe

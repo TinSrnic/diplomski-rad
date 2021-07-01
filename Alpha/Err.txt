@@ -1,0 +1,10 @@
+0(36) : error C1503: undefined variable "mixColor"
+Fragment info
+-------------
+0(36) : error C1503: undefined variable "mixColor"
+(0) : error C2003: incompatible options for link
+0(37) : error C7011: implicit cast from "int" to "bool"
+Fragment info
+-------------
+0(37) : error C7011: implicit cast from "int" to "bool"
+(0) : error C2003: incompatible options for link

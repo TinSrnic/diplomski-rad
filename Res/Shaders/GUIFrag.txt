@@ -13,6 +13,7 @@ uniform vec3 viewDirection;
 uniform vec3 lightDirection;
 uniform int useCustomColor;
 uniform int textureMultiple;
+uniform int mixColor;
 
 void main(void){
 	vec4 color = texture(tex, texCoord * textureMultiple);
@@ -33,8 +34,11 @@ void main(void){
 	}
 	
 	if(useCustomColor == 1 && color.a > 0.5) {
-		//out_color = customColor;
-		out_color = mix(customColor, color, 0.7);
+		if(mixColor == 1) {
+			out_color = mix(customColor, color, 0.7);
+		} else {
+			out_color = customColor;
+		}
 	} else {
 		out_color.a = color.a;
 	}

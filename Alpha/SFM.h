@@ -17,6 +17,7 @@ public:
 
 public:
 	SFMAgent(Vec3 position, Vec3 goal, float size, std::string textureName, Vec4 color);
+	SFMAgent::SFMAgent(Vec3 position, Vec3 goal, float size, std::string textureName);
 
 	void updatePosition(Vec3 direction);
 	std::shared_ptr<GUI> getModel();

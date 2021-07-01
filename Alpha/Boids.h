@@ -27,6 +27,7 @@ class Boids {
 public:
 	Texture m_texture;
 	std::vector<Boid> m_agents;
+	std::vector<std::shared_ptr<GUI>> m_barriers;
 	float m_minSpeed;
 	float m_maxSpeed;
 	float m_minSteerForce;

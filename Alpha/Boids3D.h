@@ -27,6 +27,8 @@ public:
 	Texture m_texture;
 	std::vector<Boid3D> m_agents;
 	std::vector<Vec3> m_directions;
+	std::vector<std::pair<Vec3, Vec3>> m_planes;
+	std::vector<std::pair<Vec3, float>> m_spheres;
 	float m_minSpeed;
 	float m_maxSpeed;
 	float m_minSteerForce;

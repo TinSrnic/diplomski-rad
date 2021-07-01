@@ -32,14 +32,15 @@ int main() {
 	GameObjects::Add(sun3);
 	GameObjects::Add(sun4);
 	
+	Texture asdf = TextureLoader::LoadTexture("turquoise.png", 1, 0.1, 0.1);
  	Texture temp = TextureLoader::LoadTexture("grass.png", 1, 0.1, 0.1);
 	Texture browTemp = Texture(TextureLoader::LoadTexture("brown.png"), 1, 0.1f, 0.1f);
 
 	GameOfLife gl = GameOfLife();
 	Boids boids = Boids(100);
-	Boids3D boids3D = Boids3D(300);
+	Boids3D boids3D = Boids3D(500);
 	SFM sfm = SFM(100);
-	Swarm swarm = Swarm(640000);
+	Swarm swarm = Swarm(64000);
 	RVO rvo = RVO(100);
 
 	GUI mainGui = GUI(TexturedModel(ModelLoader::LoadModel("plane.obj"), gl.getTexture(), 0), 0, "mainGui", Vec3(8, 8, -10), Quaternion(0, 0, 0, 1), Vec3(8), false, "asdf");
@@ -154,6 +155,7 @@ int main() {
 
 	//std::shared_ptr<Line> line = std::make_shared<Line>(Line(Vec3(0, 0, -7), Vec3(1), Vec4(1), Vec4(1)));
 	//GameObjects::Add(line);
+	Vec3 boids3DGoal = Vec3(50, 50, 50);
 	while (!engine.ShouldStop()) {
  		if (Input::GetKeyPress(GLFW_KEY_F3)) {
 			cameraUpdate = !cameraUpdate;
@@ -163,6 +165,15 @@ int main() {
 		Vec2 mouseTarget = MousePickerOrthographic::GetCurrentRay();
 		fishhook->SetPosition(Vec3(mouseTarget, -1));
 		if (Input::GetKeyPress(GLFW_KEY_H)) go = !go;
+
+		if (Input::GetKey(GLFW_KEY_I)) boids3DGoal.z -= 100 * Time::GetDeltaTime();
+		if (Input::GetKey(GLFW_KEY_J)) boids3DGoal.x -= 100 * Time::GetDeltaTime();
+		if (Input::GetKey(GLFW_KEY_K)) boids3DGoal.z += 100 * Time::GetDeltaTime();
+		if (Input::GetKey(GLFW_KEY_L)) boids3DGoal.x += 100 * Time::GetDeltaTime();
+		if (Input::GetKey(GLFW_KEY_U)) boids3DGoal.y += 100 * Time::GetDeltaTime();
+		if (Input::GetKey(GLFW_KEY_O)) boids3DGoal.y -= 100 * Time::GetDeltaTime();
+
+		sphere->SetPosition(boids3DGoal);
 
 		if (Input::GetKeyPress(GLFW_KEY_P)) {
 			scene = (scene + 1) % 6;
@@ -305,6 +316,9 @@ int main() {
 			for (int i = 0; i < boids.m_agents.size(); ++i) {
 				GameObjects::Add(boids.m_agents[i].getModel());
 			}
+			for (int i = 0; i < boids.m_barriers.size(); ++i) {
+				GameObjects::Add(boids.m_barriers[i]);
+			}
 		} else if (scene == 2) {
 			if (go) boids3D.run();
 			GameObjects::ClearEntities();
@@ -314,10 +328,11 @@ int main() {
 			GameObjects::Add(sideBox3);
 			GameObjects::Add(sideBox4);
 			GameObjects::Add(sideBox5);
-			//GameObjects::Add(sphere);
+			GameObjects::Add(sphere);
 			GameObjects::Add(torus1);
 			GameObjects::Add(torus2);
 			GameObjects::Add(torus3);
+			boids3D.m_target = boids3DGoal;
 			for (int i = 0; i < boids3D.m_agents.size(); ++i) {
 				GameObjects::Add(boids3D.m_agents[i].getModel());
 			}

@@ -15,6 +15,16 @@ SFMAgent::SFMAgent(Vec3 position, Vec3 goal, float size, std::string textureName
 	m_model = std::make_shared<GUI>(GUI(texturedModel, 0, "boid", m_position, Quaternion::Identity(), Vec3(0.3), false, "asdf", color));
 }
 
+SFMAgent::SFMAgent(Vec3 position, Vec3 goal, float size, std::string textureName) {
+	m_position = position;
+	m_goal = goal;
+	m_size = size;
+	m_direction = Vec3::Normalize(goal - position);
+	Texture texture = Texture(TextureLoader::LoadTexture(textureName), 1, 0.1f, 0.1f);
+	TexturedModel texturedModel = TexturedModel(ModelLoader::LoadModel("plane.obj"), texture, 0);
+	m_model = std::make_shared<GUI>(GUI(texturedModel, 0, "boid", m_position, Quaternion::Identity(), Vec3(0.3), false, "asdf"));
+}
+
 float randomNumber() {
 	return ((float)rand() / (RAND_MAX));
 }
@@ -34,11 +44,11 @@ SFM::SFM(int agentCount) {
 	Vec3 goal2 = Vec3(1, 8, -5);
 	for (int i = 0; i < agentCount; ++i) {
 		if (i < agentCount / 2 || true) {
-			Vec3 position = Vec3(randomNumber() * 2 - 5, randomNumber() * 2 + 7, -5 + randomNumber() * 3);
-			m_agents.push_back(SFMAgent(position, goal1, 3.0, "sheep.png", Vec4(250 / 255.0f, 218 /255.0f, 94 / 255.0f, 1.0f)));
-		} else {
 			Vec3 position = Vec3(randomNumber() * 2 + 11, randomNumber() * 2 + 7, -5 + randomNumber() * 3);
-			m_agents.push_back(SFMAgent(position, goal2, 3.0, "sheep.png", Vec4(1, 1, 1, 1)));
+			m_agents.push_back(SFMAgent(position, goal2, 3.0, "sheep.png"));
+		} else {
+			Vec3 position = Vec3(randomNumber() * 2 - 5, randomNumber() * 2 + 7, -5 + randomNumber() * 3);
+			m_agents.push_back(SFMAgent(position, goal1, 3.0, "sheep.png", Vec4(250 / 255.0f, 218 / 255.0f, 94 / 255.0f, 1.0f)));
 		}
 	}
 
